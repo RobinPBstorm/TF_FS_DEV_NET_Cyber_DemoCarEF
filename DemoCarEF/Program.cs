@@ -14,8 +14,13 @@ namespace DemoCarEF
 			try
 			{
 				//brandRepository.Create(new Brand { Name = "Jeep", Origin = "USA" });
-				Brand brandASupprimer = brandRepository.GetOneById(2);
-				brandRepository.Delete(brandASupprimer);
+
+				//Brand brandASupprimer = brandRepository.GetOneById(2);
+				//brandRepository.Delete(brandASupprimer);
+
+				//Brand newBrand = new Brand { Name = "Peugeot", Origin = "France" };
+				//brandRepository.Update(3, newBrand);
+
 			}
 			catch(Exception exception)
 			{
@@ -24,7 +29,7 @@ namespace DemoCarEF
 
 				foreach (Brand brand in brandRepository.GetAll())
 			{
-				Console.WriteLine($"{brand.Id} - {brand.Name}");
+				Console.WriteLine($"{brand}");
 			}
 		}
 	}

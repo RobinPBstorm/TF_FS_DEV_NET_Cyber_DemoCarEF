@@ -38,5 +38,21 @@ namespace DemoCarEF.DAL.Repositories
 			return context.Brands.FirstOrDefault(brand => brand.Id == id);
 		}
 
+		public void Update(Brand brand)
+		{
+			if(brand is null)
+			{
+				throw new Exception("Invalid brand");
+			}
+			Brand? brandToUpdate = this.GetOneById(brand.Id);
+			if (brandToUpdate is null)
+			{
+				throw new Exception("Brand not found!");
+			}
+
+			context.Brands.Update(brand);
+			context.SaveChanges();
+		}
+
 	}
 }

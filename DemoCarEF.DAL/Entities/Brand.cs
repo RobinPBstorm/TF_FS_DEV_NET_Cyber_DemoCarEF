@@ -18,5 +18,10 @@ namespace DemoCarEF.DAL.Entities
 
 		[MaxLength(50)]
 		public string Origin { get; set; }
-    }
+
+		public override string ToString()
+		{
+			return $"Marque n° {Id} : {Name} - {Origin}";
+		}
+	}
 }

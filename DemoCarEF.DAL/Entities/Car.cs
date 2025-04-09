@@ -20,5 +20,10 @@ namespace DemoCarEF.DAL.Entities
 
 		[ForeignKey("BrandId")]
         public Brand Brand { get; set; }
-    }
+
+		public override string ToString()
+		{
+			return $"Voiture n° {Id} : {Brand.Name} {Model}";
+		}
+	}
 }
